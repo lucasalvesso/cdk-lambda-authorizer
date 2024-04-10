@@ -1,14 +1,17 @@
-# Welcome to your CDK TypeScript project
+# Lambda authorizer with custom responses
 
-This is a blank project for CDK development with TypeScript.
+### Api gateway has 2 resource paths:
+#### . Post - to get a token
+#### . Get - to invoke a lambda with Authorization token provided in headers
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
 
-## Useful commands
+-----
+### Authorizer handler should be able to return policy statemant to allow or deny the request
 
-* `npm run build`   compile typescript to js
-* `npm run watch`   watch for changes and compile
-* `npm run test`    perform the jest unit tests
-* `npx cdk deploy`  deploy this stack to your default AWS account/region
-* `npx cdk diff`    compare deployed stack with current state
-* `npx cdk synth`   emits the synthesized CloudFormation template
+-----
+
+The keyPair mock was provided from https://mkjwk.org/ in order to generate tokens that will be validated.
+
+This use case should fit the cognito public keys.
+
+OBS: Local execution will get a generic class of secrets manager.
