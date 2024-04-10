@@ -1,8 +1,9 @@
 module.exports = {
-  testEnvironment: 'node',
-  roots: ['<rootDir>/test'],
-  testMatch: ['**/*.test.ts'],
+  testEnvironment: "node",
+  roots: ["<rootDir>/test"],
+  testMatch: ["**/*.test.ts"],
   transform: {
-    '^.+\\.tsx?$': 'ts-jest'
-  }
+    "^.+\\.ts?$": "ts-jest",
+  },
+  setupFilesAfterEnv: ["<rootDir>/test/mock-secrets.ts"],
 };
